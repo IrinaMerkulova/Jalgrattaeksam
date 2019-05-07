@@ -1,0 +1,46 @@
+﻿@model IEnumerable<JalgrattaeksamMVC.Models.Jalgrattaeksam>
+
+@{
+	/**/
+
+	ViewBag.Title = "Tänav";
+}
+
+<h2>Tänav</h2>
+
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Eesnimi)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Perenimi)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Uulits)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Eesnimi)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Perenimi)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Uulits)
+			</td>
+			<td>
+				@Html.ActionLink("Läbitud", "PassFail",
+															new { id = item.Id, part = "Street", result = 1 }) |
+				@Html.ActionLink("Põrutud", "PassFail",
+															new { id = item.Id, part = "Street", result = 2 })
+			</td>
+		</tr>
+	}
+
+</table>

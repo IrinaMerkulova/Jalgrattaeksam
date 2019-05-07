@@ -1,0 +1,80 @@
+﻿@model JalgrattaeksamMVC.Models.Jalgrattaeksam
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Jalgrattaeksam</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Eesnimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eesnimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Perenimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Perenimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teooria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teooria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Slaalom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Slaalom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ringtee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ringtee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uulits)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uulits)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Luba)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Luba)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

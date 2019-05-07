@@ -1,0 +1,87 @@
+﻿@model IEnumerable<JalgrattaeksamMVC.Models.Jalgrattaeksam>
+
+@{
+	ViewBag.Title = "License";
+}
+
+<h2>Lubade vormistamine</h2>
+
+<table class="table">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Eesnimi)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Perenimi)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Teooria)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Slaalom)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Ringtee)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Uulits)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Luba)
+		</th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Eesnimi)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Perenimi)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Teooria)
+			</td>
+			<td>
+				@if (item.Slaalom == 1)
+				{
+					@:Läbitud
+				}
+				else if (item.Slaalom == 2)
+				{
+					@:Põrutud
+				}
+				else
+				{
+					@:.
+				}
+			</td>
+			<td>
+				@(item.Ringtee == 1 ? "Läbitud" : item.Ringtee == 2 ? "Põrutud" : ".")
+			</td>
+			<td>
+				@(item.Uulits == 1 ? "Läbitud" : item.Uulits == 2 ? "Põrutud" : ".")
+			</td>
+			<td>
+				@if (item.Luba == 1)
+				{
+					@:Väljastatud
+				}
+				else if (item.Luba==2)
+				{
+					@Html.ActionLink("Väljasta luba", "PassFail",
+		new { id = item.Id, part = "License", result = 1 })
+				}
+				else
+				{
+					@:.
+				}
+				@*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+					@Html.ActionLink("Details", "Details", new { id=item.Id }) |
+					@Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+			</td>
+		</tr>
+	}
+
+</table>
