@@ -31,6 +31,7 @@ namespace JalgrattaeksamMVC.Controllers
 		{
             //TODO Vaata Theory actioni koodi ja lisa siia sobiv kitsendus (where)
 			var model = db.Jalgrattaeksams.
+                Where(m=>m.Slaalom==-1).
 				ToList();
 			return View(model);
 		}
