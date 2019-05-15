@@ -91,7 +91,7 @@ namespace JalgrattaeksamMVC.Controllers
             //TODO Muuda lubade sorteerimist nii, et väljastatud lubadega kirjed on tabeli lõpus
 			var model = db.Jalgrattaeksams.
 				Where(m => m.Teooria >= 0).
-				OrderByDescending(m=>m.Luba).
+				OrderBy(m=>m.Luba).
 				ThenBy(m=>m.Perenimi).
 				ToList();
 			return View(model);
