@@ -31,7 +31,8 @@ namespace JalgrattaeksamMVC.Controllers
 		{
             //TODO Vaata Theory actioni koodi ja lisa siia sobiv kitsendus (where)
 			var model = db.Jalgrattaeksams.
-				ToList();
+                Where(m => m.Slaalom == -1).
+                ToList();
 			return View(model);
 		}
 		public ActionResult PassFail(int? id,string part,int result)
@@ -88,7 +89,6 @@ namespace JalgrattaeksamMVC.Controllers
 		}
 		public ActionResult License()
 		{
-            //TODO Muuda lubade sorteerimist nii, et väljastatud lubadega kirjed on tabeli lõpus
 			var model = db.Jalgrattaeksams.
 				Where(m => m.Teooria >= 0).
 				OrderByDescending(m=>m.Luba).
