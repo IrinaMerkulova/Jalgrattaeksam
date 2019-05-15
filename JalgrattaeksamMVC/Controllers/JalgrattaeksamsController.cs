@@ -31,7 +31,7 @@ namespace JalgrattaeksamMVC.Controllers
 		{
             //TODO Vaata Theory actioni koodi ja lisa siia sobiv kitsendus (where)
 			var model = db.Jalgrattaeksams.
-                Where(m => m.Teooria == -1).
+                Where(m =>m.Slaalom==-1).
                 ToList();
 			return View(model);
 		}
@@ -80,11 +80,9 @@ namespace JalgrattaeksamMVC.Controllers
 		public ActionResult Street()
 		{
 			var model = db.Jalgrattaeksams.
-				Where(m => m.Teooria >= 9 &&
-															m.Ringtee == 1 &&
-															m.Slaalom==1 &&
-															m.Uulits==-1).
-										ToList();
+				Where(m => m.Teooria >= 9 && m.Ringtee == 1 &&
+                m.Slaalom==1 && m.Uulits==-1).
+                ToList();
 			return View(model);
 		}
 		public ActionResult License()
@@ -92,7 +90,7 @@ namespace JalgrattaeksamMVC.Controllers
             //TODO Muuda lubade sorteerimist nii, et väljastatud lubadega kirjed on tabeli lõpus
 			var model = db.Jalgrattaeksams.
 				Where(m => m.Teooria >= 0).
-				OrderByDescending(m=>m.Luba).
+				OrderBy(m=>m.Luba).
 				ThenBy(m=>m.Perenimi).
 				ToList();
 			return View(model);
