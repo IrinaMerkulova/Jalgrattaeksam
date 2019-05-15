@@ -214,3 +214,5 @@ C:\Users\opilane\Desktop\JalgrattaeksamMVC\JalgrattaeksamMVC\JalgrattaeksamMVC\b
 C:\Users\opilane\Desktop\JalgrattaeksamMVC\JalgrattaeksamMVC\JalgrattaeksamMVC\obj\Debug\JalgrattaeksamMVC.csprojResolveAssemblyReference.cache
 C:\Users\opilane\Desktop\JalgrattaeksamMVC\JalgrattaeksamMVC\JalgrattaeksamMVC\obj\Debug\JalgrattaeksamMVC.dll
 C:\Users\opilane\Desktop\JalgrattaeksamMVC\JalgrattaeksamMVC\JalgrattaeksamMVC\obj\Debug\JalgrattaeksamMVC.pdb
+C:\Users\opilane\Desktop\Jalgrattaeksam\JalgrattaeksamMVC\obj\Debug\JalgrattaeksamMVC.dll
+C:\Users\opilane\Desktop\Jalgrattaeksam\JalgrattaeksamMVC\obj\Debug\JalgrattaeksamMVC.pdb
