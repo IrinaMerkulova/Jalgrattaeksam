@@ -29,7 +29,7 @@ namespace JalgrattaeksamMVC.Controllers
 		}
 		public ActionResult Slalom()
 		{
-            //TODO Vaata Theory actioni koodi ja lisa siia sobiv kitsendus (where)
+            //TODO Посмотреть Theory Action код и добавить туда Where
 			var model = db.Jalgrattaeksams.
 				ToList();
 			return View(model);
