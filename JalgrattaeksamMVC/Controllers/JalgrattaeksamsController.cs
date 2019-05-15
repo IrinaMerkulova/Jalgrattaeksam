@@ -23,13 +23,13 @@ namespace JalgrattaeksamMVC.Controllers
 		public ActionResult Theory()
 		{
 			var model = db.Jalgrattaeksams.
-				Where(m=>m.Teooria==-1).
+				Where(m=>m.Teooria==60).
 				ToList();
 			return View(model);
 		}
 		public ActionResult Slalom()
 		{
-            //TODO Посмотреть Theory Action код и добавить туда Where
+            //TODO Посмотреть Theory код и добавить туда Where
 			var model = db.Jalgrattaeksams.
 				ToList();
 			return View(model);
@@ -88,10 +88,10 @@ namespace JalgrattaeksamMVC.Controllers
 		}
 		public ActionResult License()
 		{
-            //TODO Muuda lubade sorteerimist nii, et väljastatud lubadega kirjed on tabeli lõpus
+            //TODO Изменить lubade sorteeremene, чтобы väljastatud были в конце.
 			var model = db.Jalgrattaeksams.
 				Where(m => m.Teooria >= 0).
-				OrderByDescending(m=>m.Luba).
+				OrderBy(m=>m.Luba).
 				ThenBy(m=>m.Perenimi).
 				ToList();
 			return View(model);
